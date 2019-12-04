@@ -7,17 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Human : NSObject
 
 @property (strong, nonatomic) NSString* name;
-@property (assign, nonatomic) NSInteger height;
-@property (assign, nonatomic) NSInteger weight;
+@property (assign, nonatomic) CGFloat height;
+@property (assign, nonatomic) CGFloat weight;
 @property (assign, nonatomic) NSString* gender;
 
 -(void) movement;
+
+- (instancetype) init: (NSString*) name withWeight: (CGFloat) weight withHeight: (CGFloat) height withGender: (NSString*) gender;
 
 @end
 

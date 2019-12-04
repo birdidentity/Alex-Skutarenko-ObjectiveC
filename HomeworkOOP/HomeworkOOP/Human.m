@@ -14,4 +14,16 @@
     NSLog(@"%@ walking around", self.name);
 }
 
+- (instancetype) init: (NSString*) name withWeight: (CGFloat) weight withHeight: (CGFloat) height withGender: (NSString*) gender {
+    self = [super init];
+    if (self) {
+        self.name = name;
+        self.gender = gender;
+        self.height = height;
+        self.weight = weight;
+    }
+    return self;
+}
+
+
 @end
