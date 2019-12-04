@@ -19,6 +19,8 @@
 		698D8BAB2397B145000D76F1 /* Runner.m in Sources */ = {isa = PBXBuildFile; fileRef = 698D8BAA2397B145000D76F1 /* Runner.m */; };
 		698D8BAE2397B1A1000D76F1 /* Swimmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 698D8BAD2397B1A1000D76F1 /* Swimmer.m */; };
 		698D8BB12397BCDF000D76F1 /* Superman.m in Sources */ = {isa = PBXBuildFile; fileRef = 698D8BB02397BCDF000D76F1 /* Superman.m */; };
+		698D8BB42397CCD6000D76F1 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 698D8BB32397CCD6000D76F1 /* Animal.m */; };
+		698D8BBB2397D752000D76F1 /* ColdBlooded.m in Sources */ = {isa = PBXBuildFile; fileRef = 698D8BBA2397D752000D76F1 /* ColdBlooded.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		698D8BAD2397B1A1000D76F1 /* Swimmer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Swimmer.m; sourceTree = "<group>"; };
 		698D8BAF2397BCDF000D76F1 /* Superman.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Superman.h; sourceTree = "<group>"; };
 		698D8BB02397BCDF000D76F1 /* Superman.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Superman.m; sourceTree = "<group>"; };
+		698D8BB22397CCD6000D76F1 /* Animal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		698D8BB32397CCD6000D76F1 /* Animal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
+		698D8BB92397D752000D76F1 /* ColdBlooded.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColdBlooded.h; sourceTree = "<group>"; };
+		698D8BBA2397D752000D76F1 /* ColdBlooded.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColdBlooded.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,16 +82,8 @@
 		698D8B862397AEA6000D76F1 /* HomeworkOOP */ = {
 			isa = PBXGroup;
 			children = (
-				698D8BAF2397BCDF000D76F1 /* Superman.h */,
-				698D8BB02397BCDF000D76F1 /* Superman.m */,
-				698D8BA62397B0D0000D76F1 /* Cyclist.h */,
-				698D8BA72397B0D0000D76F1 /* Cyclist.m */,
-				698D8BA92397B145000D76F1 /* Runner.h */,
-				698D8BAA2397B145000D76F1 /* Runner.m */,
-				698D8BAC2397B1A1000D76F1 /* Swimmer.h */,
-				698D8BAD2397B1A1000D76F1 /* Swimmer.m */,
-				698D8BA02397AF78000D76F1 /* Human.h */,
-				698D8BA12397AF78000D76F1 /* Human.m */,
+				698D8BB82397D59B000D76F1 /* Animals */,
+				698D8BB52397CCE3000D76F1 /* Humans */,
 				698D8B872397AEA6000D76F1 /* AppDelegate.h */,
 				698D8B882397AEA6000D76F1 /* AppDelegate.m */,
 				698D8B8A2397AEA6000D76F1 /* SceneDelegate.h */,
@@ -100,6 +98,35 @@
 			);
 			path = HomeworkOOP;
 			sourceTree = "<group>";
+		};
+		698D8BB52397CCE3000D76F1 /* Humans */ = {
+			isa = PBXGroup;
+			children = (
+				698D8BA02397AF78000D76F1 /* Human.h */,
+				698D8BA12397AF78000D76F1 /* Human.m */,
+				698D8BAF2397BCDF000D76F1 /* Superman.h */,
+				698D8BB02397BCDF000D76F1 /* Superman.m */,
+				698D8BA62397B0D0000D76F1 /* Cyclist.h */,
+				698D8BA72397B0D0000D76F1 /* Cyclist.m */,
+				698D8BA92397B145000D76F1 /* Runner.h */,
+				698D8BAA2397B145000D76F1 /* Runner.m */,
+				698D8BAC2397B1A1000D76F1 /* Swimmer.h */,
+				698D8BAD2397B1A1000D76F1 /* Swimmer.m */,
+			);
+			path = Humans;
+			sourceTree = "<group>";
+		};
+		698D8BB82397D59B000D76F1 /* Animals */ = {
+			isa = PBXGroup;
+			children = (
+				698D8BB22397CCD6000D76F1 /* Animal.h */,
+				698D8BB92397D752000D76F1 /* ColdBlooded.h */,
+				698D8BBA2397D752000D76F1 /* ColdBlooded.m */,
+				698D8BB32397CCD6000D76F1 /* Animal.m */,
+			);
+			name = Animals;
+			path = HomeworkOOP/Animals;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -176,8 +203,10 @@
 				698D8BAB2397B145000D76F1 /* Runner.m in Sources */,
 				698D8B8F2397AEA6000D76F1 /* ViewController.m in Sources */,
 				698D8BA82397B0D0000D76F1 /* Cyclist.m in Sources */,
+				698D8BBB2397D752000D76F1 /* ColdBlooded.m in Sources */,
 				698D8B892397AEA6000D76F1 /* AppDelegate.m in Sources */,
 				698D8BA22397AF78000D76F1 /* Human.m in Sources */,
+				698D8BB42397CCD6000D76F1 /* Animal.m in Sources */,
 				698D8B9A2397AEA9000D76F1 /* main.m in Sources */,
 				698D8B8C2397AEA6000D76F1 /* SceneDelegate.m in Sources */,
 			);

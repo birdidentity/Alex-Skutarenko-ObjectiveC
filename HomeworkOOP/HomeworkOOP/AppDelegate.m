@@ -12,6 +12,8 @@
 #import "Runner.h"
 #import "Swimmer.h"
 #import "Superman.h"
+#import "Animals/Animal.h"
+#import "Animals/ColdBlooded.h"
 
 @interface AppDelegate ()
 
@@ -29,12 +31,33 @@
     Swimmer* nicholas = [[Swimmer alloc] init:@"Nicholas" withWeight:74.f withHeight:1.88f withGender:@"male"];
     Superman* superman = [[Superman alloc] init:100 speed:200.2f];
     
+    Animal* dog = [[Animal alloc] init:@"puppy" type:@"Dog" lifeSpan:14];
+    ColdBlooded* lizzard = [[ColdBlooded alloc] init:@"Lizzy" type:@"Lizzard" lifeSpan:3];
     
-    NSArray* people = [NSArray arrayWithObjects:peter, jessy, colin, nicholas, superman, nil];
     
-    for (Human* person in people) {
+    NSArray* people = [NSArray arrayWithObjects:peter, jessy, colin, nicholas, superman, dog, lizzard, nil];
+    
+    /* for (Human* person in people) {
         NSLog(@"My name is %@, my weight is %f, my height is %f, my gender is %@", person.name, person.weight, person.height, person.gender);
         [person movement];
+    }
+    
+    for (long i = people.count - 1; i >= 0; i--) {
+        if ([people[i] isKindOfClass:[Superman class]]) {
+            Superman* superman = (Superman*)people[i];
+            NSLog(@"I'm %@, my power is %ld, my speed is %f", superman.name, superman.power, superman.speed);
+        } else {
+            NSLog(@"I'm just a regular human");
+        }
+    } */
+    
+    for (NSObject* being in people) {
+        if ([being isKindOfClass:[Human class]]) {
+            NSLog(@"This is human with name %@", [(Human*)being name]);
+        }
+        if ([being isKindOfClass:[Animal class]]) {
+            NSLog(@"This is animal with name %@", [(Animal*)being name]);
+        }
     }
     
     return YES;
