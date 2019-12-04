@@ -35,7 +35,25 @@
     ColdBlooded* lizzard = [[ColdBlooded alloc] init:@"Lizzy" type:@"Lizzard" lifeSpan:3];
     
     
-    NSArray* people = [NSArray arrayWithObjects:peter, jessy, colin, nicholas, superman, dog, lizzard, nil];
+    NSArray* people = [NSArray arrayWithObjects:peter, jessy, colin, nicholas, superman, nil];
+    NSArray* animals = [NSArray arrayWithObjects:dog, lizzard, nil];
+    
+    NSUInteger counter;
+    
+    if (people.count > animals.count) {
+        counter = people.count;
+    } else {
+        counter = animals.count;
+    }
+    
+    for (int i = 0; i < counter; i++) {
+        if (people.count > i) {
+            NSLog(@"%@", [people[i] name]);
+        }
+        if (animals.count > i) {
+            NSLog(@"%@", [animals[i] name]);
+        }
+    }
     
     /* for (Human* person in people) {
         NSLog(@"My name is %@, my weight is %f, my height is %f, my gender is %@", person.name, person.weight, person.height, person.gender);
@@ -51,14 +69,14 @@
         }
     } */
     
-    for (NSObject* being in people) {
-        if ([being isKindOfClass:[Human class]]) {
-            NSLog(@"This is human with name %@", [(Human*)being name]);
-        }
-        if ([being isKindOfClass:[Animal class]]) {
-            NSLog(@"This is animal with name %@", [(Animal*)being name]);
-        }
-    }
+//    for (NSObject* being in people) {
+//        if ([being isKindOfClass:[Human class]]) {
+//            NSLog(@"This is human with name %@", [(Human*)being name]);
+//        }
+//        if ([being isKindOfClass:[Animal class]]) {
+//            NSLog(@"This is animal with name %@", [(Animal*)being name]);
+//        }
+//    }
     
     return YES;
 }
