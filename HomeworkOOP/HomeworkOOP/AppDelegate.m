@@ -31,14 +31,45 @@
     Swimmer* nicholas = [[Swimmer alloc] init:@"Nicholas" withWeight:74.f withHeight:1.88f withGender:@"male"];
     Superman* superman = [[Superman alloc] init:100 speed:200.2f];
     
-    Animal* dog = [[Animal alloc] init:@"puppy" type:@"Dog" lifeSpan:14];
+    Animal* dog = [[Animal alloc] init:@"Puppy" type:@"Dog" lifeSpan:14];
     ColdBlooded* lizzard = [[ColdBlooded alloc] init:@"Lizzy" type:@"Lizzard" lifeSpan:3];
     
     
-    NSArray* people = [NSArray arrayWithObjects:peter, jessy, colin, nicholas, superman, nil];
-    NSArray* animals = [NSArray arrayWithObjects:dog, lizzard, nil];
+    NSArray* people = [NSArray arrayWithObjects:peter, lizzard, jessy, colin, nicholas, superman, dog, nil];
     
-    NSUInteger counter;
+    NSArray* sortedPeopleWithAnimals = [people sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        
+        if (![obj1 isKindOfClass:[Animal class]] && [obj2 isKindOfClass:[Animal class]]) {
+            return NSOrderedAscending;
+        } else if ([obj1 isKindOfClass:[Animal class]] && ![obj2 isKindOfClass:[Animal class]]) {
+            return NSOrderedDescending;
+        }
+        
+        if ([obj1 isKindOfClass:[Animal class]] && [obj2 isKindOfClass:[Animal class]]) {
+            if ((Animal*)[obj1 name] < (Animal*)[obj2 name]) {
+                return NSOrderedAscending;
+            }
+            return NSOrderedDescending;
+        } else if ([obj1 isKindOfClass:[Human class]] && [obj2 isKindOfClass:[Human class]]) {
+            if ((Human*)[obj1 name] < (Human*)[obj2 name]) {
+                return  NSOrderedAscending;
+            }
+            return NSOrderedDescending;
+        }
+        
+        return NSOrderedSame;
+    }];
+    
+    for (NSObject* obj in sortedPeopleWithAnimals) {
+        if ([obj isKindOfClass:[Animal class]]) {
+            NSLog(@"%@", [(Animal*)obj name]);
+        } else if ([obj isKindOfClass:[Human class]]) {
+            NSLog(@"%@", [(Human*)obj name]);
+        }
+    }
+//    NSArray* animals = [NSArray arrayWithObjects:dog, lizzard, nil];
+    
+    /* NSUInteger counter;
     
     if (people.count > animals.count) {
         counter = people.count;
@@ -53,7 +84,7 @@
         if (animals.count > i) {
             NSLog(@"%@", [animals[i] name]);
         }
-    }
+    } */
     
     /* for (Human* person in people) {
         NSLog(@"My name is %@, my weight is %f, my height is %f, my gender is %@", person.name, person.weight, person.height, person.gender);
