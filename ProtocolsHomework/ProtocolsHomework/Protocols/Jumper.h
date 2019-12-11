@@ -22,9 +22,6 @@ typedef enum {
 @property (assign, nonatomic) JumperType jumperType;
 @property (assign, nonatomic) CGFloat maxJumpHeight;
 
--(void) jump;
-
-
 @end
 
 NS_ASSUME_NONNULL_END

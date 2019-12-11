@@ -1,16 +1,20 @@
 //
 //  AppDelegate.m
-//  ProtocolsHomework
+//  NotificationsHomeworkScholar
 //
-//  Created by Vladislav Boyko on 12/8/19.
+//  Created by Vladislav Boyko on 12/10/19.
 //  Copyright © 2019 Buckwheat. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "Jumper.h"
-#import "Student.h"
+#import "Government.h"
+#import "Doctor.h"
+#import "Pensioner.h"
+#import "Businessman.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) Government *government;
 
 @end
 
@@ -20,6 +24,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+#pragma mark - people and government declaration
+    self.government = [Government new];
+    //
+    Doctor *bestDoctor = [Doctor new];
+    bestDoctor.name = @"Jack Pirate";
+    //
+    Businessman *monopolist = [Businessman new];
+    monopolist.name = @"Donald Tramp";
+    //
+    Pensioner *oldMan = [Pensioner new];
+    oldMan.name = @"Peter Donovan";
+    
+#pragma mark - goverment property changes
+    
+    self.government.salary = 2000;
+    self.government.averagePrice = 20.1f;
+    self.government.taxLevel = 3;
+    self.government.pension = 1000;
     
     return YES;
 }

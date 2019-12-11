@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		694F6B56239FD2CF0090562B /* Runner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Runner.h; sourceTree = "<group>"; };
 		695FB289239D04860051B01F /* ProtocolsHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtocolsHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		695FB28C239D04860051B01F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		695FB28D239D04860051B01F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				695FB2A8239D058B0051B01F /* Jumper.h */,
+				694F6B56239FD2CF0090562B /* Runner.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Jumper.h"
+#import "Runner.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +17,7 @@ typedef enum {
     Female
 } Gender;
 
-@interface Student : NSObject <Jumper>
+@interface Student : NSObject <Jumper, Runner>
 
 @property (strong, nonatomic) NSString *name;
 @property (assign, nonatomic) NSInteger age;
