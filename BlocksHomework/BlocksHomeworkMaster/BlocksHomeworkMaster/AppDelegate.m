@@ -11,6 +11,8 @@
 
 @interface AppDelegate ()
 
+@property (strong, nonatomic) NSMutableArray *patients;
+
 @end
 
 @implementation AppDelegate
@@ -36,12 +38,7 @@
     Patient *larry = [[Patient alloc] initWithName:@"Larry"];
     Patient *gordon = [[Patient alloc] initWithName:@"Gordon"];
     
-    NSArray *patients = @[steve, john, mark, colin, james, michael, larry, gordon];
-    
-    for(Patient *patient in patients) {
-        [patient gettingWorse:block];
-    }
-    
+    self.patients = [[NSMutableArray alloc] initWithArray:@[steve, john, mark, colin, james, michael, larry, gordon]];
     
     
     return YES;
