@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Student.h"
+#import "StudentOperation.h"
 
 @interface AppDelegate ()
 
@@ -28,8 +29,14 @@
         Student *studentColin = [[Student alloc] initWithName: @"Colin"];
         Student *studentFrank = [[Student alloc] initWithName: @"Frank"];
         Student *studentGarry = [[Student alloc] initWithName: @"Garry"];
+    
+        StudentOperation *mark = [[StudentOperation alloc] initWithName: @"Mark"];
+        StudentOperation *steve = [[StudentOperation alloc] initWithName: @"Steve"];
+        StudentOperation *colin = [[StudentOperation alloc] initWithName: @"Colin"];
+        StudentOperation *frank = [[StudentOperation alloc] initWithName: @"Frank"];
+        StudentOperation *garry = [[StudentOperation alloc] initWithName: @"Garry"];
         
-        self.students = @[studentMark, studentSteve, studentColin, studentFrank, studentGarry];
+        self.students = @[mark, steve, colin, frank, garry];
         
         NSRange range = NSMakeRange(0, 10000000);
 
@@ -39,6 +46,7 @@
             [student guessAnswer:arc4random() % 10000001 inRange:range];
         }
      
+        
     
     return YES;
 }
