@@ -32,7 +32,19 @@
         }
     }
     
+    /*
     for (NSString *sentence in filteredArray) {
+        NSLog(@"%@", sentence);
+    } */
+    
+    NSMutableArray *reversedArray = [NSMutableArray new];
+    
+    for (NSString *sentence in filteredArray) {
+        NSString* reversed = [[[sentence componentsSeparatedByString:@" "] reverseObjectEnumerator].allObjects componentsJoinedByString:@" "];
+        [reversedArray addObject:reversed];
+    }
+    
+    for (NSString *sentence in reversedArray) {
         NSLog(@"%@", sentence);
     }
     
