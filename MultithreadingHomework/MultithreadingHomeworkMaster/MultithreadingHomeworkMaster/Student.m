@@ -60,7 +60,7 @@
 #pragma mark - dealloc override
 
 -(void) dealloc {
-    NSLog(@"\n\n student %@ finished university", _name);
+    
 }
 
 @end

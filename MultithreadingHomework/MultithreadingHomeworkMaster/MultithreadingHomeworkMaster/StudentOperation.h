@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) NSString *name;
 
++(NSOperationQueue *) queue;
+
 -(instancetype) initWithName:(NSString *) name;
 
 @end

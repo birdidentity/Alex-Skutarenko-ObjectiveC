@@ -10,9 +10,18 @@
 
 @implementation StudentOperation
 
++(NSOperationQueue *) queue {
+    static NSOperationQueue *queue = nil;
+    if(!queue) {
+        queue = [NSOperationQueue new];
+        return queue;
+    }
+    NSLog(@"%@", queue.name);
+    return queue;
+}
+
 -(void) guessAnswer: (NSInteger) number inRange:(NSRange) range {
     NSOperation *operation = [NSOperation new];
-    NSOperationQueue *queue= [NSOperationQueue new];
     
     __weak StudentOperation *student = self;
     
@@ -31,7 +40,7 @@
             NSLog(@"\n %@ spend %f time to solve this task", student.name, CACurrentMediaTime() - startTime);
     }];
     
-    [queue addOperation:operation];
+    [[StudentOperation queue] addOperation:operation];
 }
 
 -(instancetype) initWithName:(NSString *) name {
