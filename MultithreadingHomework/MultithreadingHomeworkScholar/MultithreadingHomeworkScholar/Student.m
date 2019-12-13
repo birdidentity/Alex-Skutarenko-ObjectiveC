@@ -18,7 +18,7 @@
     dispatch_queue_t queue = dispatch_queue_create("com.buckweat.myqueue", DISPATCH_QUEUE_SERIAL);
     dispatch_async(queue, ^{
         double startTime = CACurrentMediaTime();
-        
+        NSLog(@"%@ started solving!", student.name);
         while (number != generateNumber) {
             generateNumber = generateNumber = range.location + arc4random() % (range.location + range.length + 1);
         };
