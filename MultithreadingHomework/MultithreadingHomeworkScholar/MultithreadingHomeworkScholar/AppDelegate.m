@@ -1,17 +1,17 @@
 //
 //  AppDelegate.m
-//  BlocksHomeworkMaster
+//  MultithreadingHomeworkScholar
 //
-//  Created by Vladislav Boyko on 12/12/19.
+//  Created by Vladislav Boyko on 12/13/19.
 //  Copyright © 2019 Buckwheat. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "Patient.h"
+#import "Student.h"
 
 @interface AppDelegate ()
 
-@property (strong, nonatomic) NSArray *patients;
+@property (strong, nonatomic) NSArray *students;
 
 @end
 
@@ -20,17 +20,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-        
-    Patient *steve = [[Patient alloc] initWithName:@"Steve"];
-    Patient *john = [[Patient alloc] initWithName:@"Jhon"];
-    Patient *mark = [[Patient alloc] initWithName:@"Mark"];
-    Patient *colin = [[Patient alloc] initWithName:@"Colin"];
-    Patient *james = [[Patient alloc] initWithName:@"James"];
-    Patient *michael = [[Patient alloc] initWithName:@"Michael"];
-    Patient *larry = [[Patient alloc] initWithName:@"Larry"];
-    Patient *gordon = [[Patient alloc] initWithName:@"Gordon"];
     
-    self.patients = @[steve, john, mark, colin, james, michael, larry, gordon];
+    Student *studentMark = [[Student alloc] initWithName: @"Mark"];
+    Student *studentSteve = [[Student alloc] initWithName: @"Steve"];
+    Student *studentColin = [[Student alloc] initWithName: @"Colin"];
+    Student *studentFrank = [[Student alloc] initWithName: @"Frank"];
+    Student *studentGarry = [[Student alloc] initWithName: @"Garry"];
+    
+    self.students = @[studentMark, studentSteve, studentColin, studentFrank, studentGarry];
+    
+    NSRange range = NSMakeRange(0, 10000000);
+    
+    for (Student *student in self.students) {
+        [student guessAnswer:arc4random() % 10000001 inRange:range];
+    }
     
     
     return YES;

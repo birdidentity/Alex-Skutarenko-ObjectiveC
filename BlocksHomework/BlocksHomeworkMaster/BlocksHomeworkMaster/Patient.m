@@ -8,13 +8,6 @@
 
 #import "Patient.h"
 
-@implementation Patient
-
--(void) gettingWorse: (GettingWorse) gettingWorse {
-    gettingWorse(self);
-    NSLog(@"\n\n%@ getting better!\nTemperature falls to - %.1f", _name, _temperature);
-}
-
 GettingWorse block = ^(Patient *patient) {
     if (patient.temperature > 37.7) {
         [patient makeShot];
@@ -22,6 +15,13 @@ GettingWorse block = ^(Patient *patient) {
         NSLog(@"\n\nDoctor saying that %@ is okay!", patient.name);
     }
 };
+
+@implementation Patient
+
+-(void) gettingWorse: (GettingWorse) gettingWorse {
+    gettingWorse(self);
+    NSLog(@"\n\n%@ getting better!\nTemperature falls to - %.1f", _name, _temperature);
+}
 
 -(void) makeShot {
     _temperature -= 1;
